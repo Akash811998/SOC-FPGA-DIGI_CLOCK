@@ -1,0 +1,197 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'divide_by_50000000:clock|out'
+Slack : -4.689
+TNS   : -28.071
+
+Type  : Slow 1100mV 85C Model Setup 'counter60:minutes|carry'
+Slack : -4.212
+TNS   : -19.402
+
+Type  : Slow 1100mV 85C Model Setup 'counter60:seconds|carry'
+Slack : -4.152
+TNS   : -25.993
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -2.495
+TNS   : -87.417
+
+Type  : Slow 1100mV 85C Model Hold 'divide_by_50000000:clock|out'
+Slack : 0.365
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'counter60:seconds|carry'
+Slack : 0.442
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'counter60:minutes|carry'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.451
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.613
+TNS   : -24.742
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'counter60:seconds|carry'
+Slack : -0.394
+TNS   : -3.766
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'divide_by_50000000:clock|out'
+Slack : -0.394
+TNS   : -3.721
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'counter60:minutes|carry'
+Slack : -0.394
+TNS   : -2.549
+
+Type  : Slow 1100mV 0C Model Setup 'divide_by_50000000:clock|out'
+Slack : -4.709
+TNS   : -28.296
+
+Type  : Slow 1100mV 0C Model Setup 'counter60:minutes|carry'
+Slack : -4.307
+TNS   : -19.980
+
+Type  : Slow 1100mV 0C Model Setup 'counter60:seconds|carry'
+Slack : -4.159
+TNS   : -26.079
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -2.601
+TNS   : -84.701
+
+Type  : Slow 1100mV 0C Model Hold 'divide_by_50000000:clock|out'
+Slack : 0.342
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.452
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'counter60:seconds|carry'
+Slack : 0.453
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'counter60:minutes|carry'
+Slack : 0.455
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.647
+TNS   : -22.678
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'counter60:seconds|carry'
+Slack : -0.394
+TNS   : -3.710
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'divide_by_50000000:clock|out'
+Slack : -0.394
+TNS   : -3.673
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'counter60:minutes|carry'
+Slack : -0.394
+TNS   : -2.564
+
+Type  : Fast 1100mV 85C Model Setup 'divide_by_50000000:clock|out'
+Slack : -2.335
+TNS   : -13.861
+
+Type  : Fast 1100mV 85C Model Setup 'counter60:seconds|carry'
+Slack : -2.055
+TNS   : -13.067
+
+Type  : Fast 1100mV 85C Model Setup 'counter60:minutes|carry'
+Slack : -1.985
+TNS   : -8.942
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -1.130
+TNS   : -38.382
+
+Type  : Fast 1100mV 85C Model Hold 'divide_by_50000000:clock|out'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'counter60:minutes|carry'
+Slack : 0.162
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'counter60:seconds|carry'
+Slack : 0.162
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.245
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.721
+TNS   : -17.343
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'counter60:seconds|carry'
+Slack : 0.054
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'divide_by_50000000:clock|out'
+Slack : 0.059
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'counter60:minutes|carry'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'divide_by_50000000:clock|out'
+Slack : -2.138
+TNS   : -12.640
+
+Type  : Fast 1100mV 0C Model Setup 'counter60:seconds|carry'
+Slack : -1.864
+TNS   : -11.758
+
+Type  : Fast 1100mV 0C Model Setup 'counter60:minutes|carry'
+Slack : -1.853
+TNS   : -8.334
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -1.067
+TNS   : -32.946
+
+Type  : Fast 1100mV 0C Model Hold 'divide_by_50000000:clock|out'
+Slack : 0.121
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'counter60:seconds|carry'
+Slack : 0.147
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'counter60:minutes|carry'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.232
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.767
+TNS   : -20.680
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'counter60:seconds|carry'
+Slack : 0.082
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'divide_by_50000000:clock|out'
+Slack : 0.083
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'counter60:minutes|carry'
+Slack : 0.148
+TNS   : 0.000
+
+------------------------------------------------------------
