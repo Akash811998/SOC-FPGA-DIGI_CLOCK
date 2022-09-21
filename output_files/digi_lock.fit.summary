@@ -1,12 +1,12 @@
-Fitter Status : Successful - Mon Sep 19 14:52:36 2022
+Fitter Status : Successful - Tue Sep 20 21:19:15 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : digi_lock
 Top-level Entity Name : digi_clock
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 165 / 32,070 ( < 1 % )
-Total registers : 56
+Logic utilization (in ALMs) : 187 / 32,070 ( < 1 % )
+Total registers : 62
 Total pins : 57 / 457 ( 12 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )

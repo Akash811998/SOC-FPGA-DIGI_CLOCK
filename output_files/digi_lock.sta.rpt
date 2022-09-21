@@ -1,5 +1,5 @@
 Timing Analyzer report for digi_lock
-Mon Sep 19 14:52:56 2022
+Tue Sep 20 21:19:33 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -46,15 +46,17 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  38. Signal Integrity Metrics (Fast 1100mv 85c Model)
  39. Setup Transfers
  40. Hold Transfers
- 41. Report TCCS
- 42. Report RSKM
- 43. Unconstrained Paths Summary
- 44. Clock Status Summary
- 45. Unconstrained Input Ports
- 46. Unconstrained Output Ports
+ 41. Recovery Transfers
+ 42. Removal Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths Summary
+ 46. Clock Status Summary
  47. Unconstrained Input Ports
  48. Unconstrained Output Ports
- 49. Timing Analyzer Messages
+ 49. Unconstrained Input Ports
+ 50. Unconstrained Output Ports
+ 51. Timing Analyzer Messages
 
 
 
@@ -100,22 +102,22 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.46        ;
+; Average used               ; 1.50        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   4.8%      ;
-;     Processor 3            ;   4.5%      ;
-;     Processor 4            ;   4.4%      ;
-;     Processor 5            ;   4.2%      ;
-;     Processor 6            ;   4.1%      ;
-;     Processor 7            ;   4.1%      ;
-;     Processor 8            ;   4.0%      ;
-;     Processor 9            ;   4.0%      ;
-;     Processor 10           ;   4.0%      ;
-;     Processor 11           ;   4.0%      ;
-;     Processor 12           ;   4.0%      ;
+;     Processor 2            ;   5.0%      ;
+;     Processor 3            ;   4.9%      ;
+;     Processor 4            ;   4.8%      ;
+;     Processor 5            ;   4.6%      ;
+;     Processor 6            ;   4.6%      ;
+;     Processor 7            ;   4.4%      ;
+;     Processor 8            ;   4.4%      ;
+;     Processor 9            ;   4.4%      ;
+;     Processor 10           ;   4.4%      ;
+;     Processor 11           ;   4.4%      ;
+;     Processor 12           ;   4.4%      ;
 +----------------------------+-------------+
 
 
@@ -128,6 +130,7 @@ https://fpgasoftware.intel.com/eula.
 ; counter60:minutes|carry      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { counter60:minutes|carry }      ;
 ; counter60:seconds|carry      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { counter60:seconds|carry }      ;
 ; divide_by_50000000:clock|out ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { divide_by_50000000:clock|out } ;
+; load                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { load }                         ;
 +------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------+
 
 
@@ -136,10 +139,10 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                   ; Note ;
 +------------+-----------------+------------------------------+------+
-; 175.78 MHz ; 175.78 MHz      ; divide_by_50000000:clock|out ;      ;
-; 191.86 MHz ; 191.86 MHz      ; counter60:minutes|carry      ;      ;
-; 194.1 MHz  ; 194.1 MHz       ; counter60:seconds|carry      ;      ;
-; 286.12 MHz ; 286.12 MHz      ; CLOCK_50                     ;      ;
+; 177.87 MHz ; 177.87 MHz      ; counter60:seconds|carry      ;      ;
+; 186.08 MHz ; 186.08 MHz      ; divide_by_50000000:clock|out ;      ;
+; 190.84 MHz ; 190.84 MHz      ; counter60:minutes|carry      ;      ;
+; 253.68 MHz ; 253.68 MHz      ; CLOCK_50                     ;      ;
 +------------+-----------------+------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -155,10 +158,11 @@ HTML report is unavailable in plain text report export.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; divide_by_50000000:clock|out ; -4.689 ; -28.071       ;
-; counter60:minutes|carry      ; -4.212 ; -19.402       ;
-; counter60:seconds|carry      ; -4.152 ; -25.993       ;
-; CLOCK_50                     ; -2.495 ; -87.417       ;
+; counter60:seconds|carry      ; -7.556 ; -50.995       ;
+; load                         ; -4.751 ; -22.944       ;
+; counter60:minutes|carry      ; -4.527 ; -22.102       ;
+; divide_by_50000000:clock|out ; -4.374 ; -47.577       ;
+; CLOCK_50                     ; -2.942 ; -98.746       ;
 +------------------------------+--------+---------------+
 
 
@@ -167,23 +171,34 @@ HTML report is unavailable in plain text report export.
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; divide_by_50000000:clock|out ; 0.365 ; 0.000         ;
-; counter60:seconds|carry      ; 0.442 ; 0.000         ;
-; counter60:minutes|carry      ; 0.445 ; 0.000         ;
-; CLOCK_50                     ; 0.451 ; 0.000         ;
+; divide_by_50000000:clock|out ; 0.341 ; 0.000         ;
+; CLOCK_50                     ; 0.387 ; 0.000         ;
+; counter60:minutes|carry      ; 0.502 ; 0.000         ;
+; counter60:seconds|carry      ; 0.786 ; 0.000         ;
+; load                         ; 3.376 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
-------------------------------------------
-; Slow 1100mV 85C Model Recovery Summary ;
-------------------------------------------
-No paths to report.
++-------------------------------------------------------+
+; Slow 1100mV 85C Model Recovery Summary                ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; divide_by_50000000:clock|out ; -1.408 ; -15.245       ;
+; counter60:seconds|carry      ; -1.329 ; -7.815        ;
+; counter60:minutes|carry      ; -1.168 ; -5.832        ;
++------------------------------+--------+---------------+
 
 
------------------------------------------
-; Slow 1100mV 85C Model Removal Summary ;
------------------------------------------
-No paths to report.
++------------------------------------------------------+
+; Slow 1100mV 85C Model Removal Summary                ;
++------------------------------+-------+---------------+
+; Clock                        ; Slack ; End Point TNS ;
++------------------------------+-------+---------------+
+; counter60:seconds|carry      ; 0.695 ; 0.000         ;
+; counter60:minutes|carry      ; 0.790 ; 0.000         ;
+; divide_by_50000000:clock|out ; 0.803 ; 0.000         ;
++------------------------------+-------+---------------+
 
 
 +-------------------------------------------------------+
@@ -191,17 +206,19 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; CLOCK_50                     ; -0.613 ; -24.742       ;
-; counter60:seconds|carry      ; -0.394 ; -3.766        ;
-; divide_by_50000000:clock|out ; -0.394 ; -3.721        ;
-; counter60:minutes|carry      ; -0.394 ; -2.549        ;
+; CLOCK_50                     ; -0.600 ; -25.427       ;
+; divide_by_50000000:clock|out ; -0.394 ; -6.234        ;
+; counter60:seconds|carry      ; -0.394 ; -3.763        ;
+; counter60:minutes|carry      ; -0.394 ; -2.610        ;
+; load                         ; 0.313  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
 -----------------------------------------------
 ; Slow 1100mV 85C Model Metastability Summary ;
 -----------------------------------------------
-No synchronizer chains to report.
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
 
 
 +--------------------------------------------------------------------+
@@ -209,10 +226,10 @@ No synchronizer chains to report.
 +------------+-----------------+------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                   ; Note ;
 +------------+-----------------+------------------------------+------+
-; 175.16 MHz ; 175.16 MHz      ; divide_by_50000000:clock|out ;      ;
-; 188.43 MHz ; 188.43 MHz      ; counter60:minutes|carry      ;      ;
-; 193.84 MHz ; 193.84 MHz      ; counter60:seconds|carry      ;      ;
-; 277.7 MHz  ; 277.7 MHz       ; CLOCK_50                     ;      ;
+; 175.9 MHz  ; 175.9 MHz       ; counter60:seconds|carry      ;      ;
+; 182.42 MHz ; 182.42 MHz      ; divide_by_50000000:clock|out ;      ;
+; 186.92 MHz ; 186.92 MHz      ; counter60:minutes|carry      ;      ;
+; 242.84 MHz ; 242.84 MHz      ; CLOCK_50                     ;      ;
 +------------+-----------------+------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -222,10 +239,11 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; divide_by_50000000:clock|out ; -4.709 ; -28.296       ;
-; counter60:minutes|carry      ; -4.307 ; -19.980       ;
-; counter60:seconds|carry      ; -4.159 ; -26.079       ;
-; CLOCK_50                     ; -2.601 ; -84.701       ;
+; counter60:seconds|carry      ; -7.719 ; -52.108       ;
+; load                         ; -4.773 ; -23.141       ;
+; counter60:minutes|carry      ; -4.719 ; -22.955       ;
+; divide_by_50000000:clock|out ; -4.482 ; -49.259       ;
+; CLOCK_50                     ; -3.118 ; -95.211       ;
 +------------------------------+--------+---------------+
 
 
@@ -234,23 +252,34 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; divide_by_50000000:clock|out ; 0.342 ; 0.000         ;
-; CLOCK_50                     ; 0.452 ; 0.000         ;
-; counter60:seconds|carry      ; 0.453 ; 0.000         ;
-; counter60:minutes|carry      ; 0.455 ; 0.000         ;
+; divide_by_50000000:clock|out ; 0.315 ; 0.000         ;
+; CLOCK_50                     ; 0.388 ; 0.000         ;
+; counter60:minutes|carry      ; 0.572 ; 0.000         ;
+; counter60:seconds|carry      ; 0.803 ; 0.000         ;
+; load                         ; 3.448 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
------------------------------------------
-; Slow 1100mV 0C Model Recovery Summary ;
------------------------------------------
-No paths to report.
++-------------------------------------------------------+
+; Slow 1100mV 0C Model Recovery Summary                 ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; divide_by_50000000:clock|out ; -1.415 ; -15.261       ;
+; counter60:seconds|carry      ; -1.325 ; -7.806        ;
+; counter60:minutes|carry      ; -1.184 ; -5.904        ;
++------------------------------+--------+---------------+
 
 
-----------------------------------------
-; Slow 1100mV 0C Model Removal Summary ;
-----------------------------------------
-No paths to report.
++------------------------------------------------------+
+; Slow 1100mV 0C Model Removal Summary                 ;
++------------------------------+-------+---------------+
+; Clock                        ; Slack ; End Point TNS ;
++------------------------------+-------+---------------+
+; counter60:seconds|carry      ; 0.650 ; 0.000         ;
+; counter60:minutes|carry      ; 0.719 ; 0.000         ;
+; divide_by_50000000:clock|out ; 0.751 ; 0.000         ;
++------------------------------+-------+---------------+
 
 
 +-------------------------------------------------------+
@@ -258,17 +287,19 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; CLOCK_50                     ; -0.647 ; -22.678       ;
-; counter60:seconds|carry      ; -0.394 ; -3.710        ;
-; divide_by_50000000:clock|out ; -0.394 ; -3.673        ;
-; counter60:minutes|carry      ; -0.394 ; -2.564        ;
+; CLOCK_50                     ; -0.667 ; -23.183       ;
+; divide_by_50000000:clock|out ; -0.394 ; -6.191        ;
+; counter60:seconds|carry      ; -0.394 ; -3.716        ;
+; counter60:minutes|carry      ; -0.394 ; -2.566        ;
+; load                         ; 0.305  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
 ----------------------------------------------
 ; Slow 1100mV 0C Model Metastability Summary ;
 ----------------------------------------------
-No synchronizer chains to report.
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
 
 
 +-------------------------------------------------------+
@@ -276,10 +307,11 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; divide_by_50000000:clock|out ; -2.335 ; -13.861       ;
-; counter60:seconds|carry      ; -2.055 ; -13.067       ;
-; counter60:minutes|carry      ; -1.985 ; -8.942        ;
-; CLOCK_50                     ; -1.130 ; -38.382       ;
+; counter60:seconds|carry      ; -3.899 ; -25.986       ;
+; load                         ; -2.282 ; -10.892       ;
+; counter60:minutes|carry      ; -2.263 ; -11.259       ;
+; divide_by_50000000:clock|out ; -2.092 ; -22.669       ;
+; CLOCK_50                     ; -1.503 ; -46.543       ;
 +------------------------------+--------+---------------+
 
 
@@ -288,23 +320,34 @@ No synchronizer chains to report.
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; divide_by_50000000:clock|out ; 0.148 ; 0.000         ;
-; counter60:minutes|carry      ; 0.162 ; 0.000         ;
-; counter60:seconds|carry      ; 0.162 ; 0.000         ;
-; CLOCK_50                     ; 0.245 ; 0.000         ;
+; divide_by_50000000:clock|out ; 0.141 ; 0.000         ;
+; CLOCK_50                     ; 0.205 ; 0.000         ;
+; counter60:minutes|carry      ; 0.247 ; 0.000         ;
+; counter60:seconds|carry      ; 0.360 ; 0.000         ;
+; load                         ; 1.902 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
-------------------------------------------
-; Fast 1100mV 85C Model Recovery Summary ;
-------------------------------------------
-No paths to report.
++-------------------------------------------------------+
+; Fast 1100mV 85C Model Recovery Summary                ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; divide_by_50000000:clock|out ; -0.904 ; -9.777        ;
+; counter60:seconds|carry      ; -0.841 ; -4.947        ;
+; counter60:minutes|carry      ; -0.768 ; -3.836        ;
++------------------------------+--------+---------------+
 
 
------------------------------------------
-; Fast 1100mV 85C Model Removal Summary ;
------------------------------------------
-No paths to report.
++------------------------------------------------------+
+; Fast 1100mV 85C Model Removal Summary                ;
++------------------------------+-------+---------------+
+; Clock                        ; Slack ; End Point TNS ;
++------------------------------+-------+---------------+
+; counter60:seconds|carry      ; 0.323 ; 0.000         ;
+; counter60:minutes|carry      ; 0.378 ; 0.000         ;
+; divide_by_50000000:clock|out ; 0.401 ; 0.000         ;
++------------------------------+-------+---------------+
 
 
 +-------------------------------------------------------+
@@ -312,17 +355,19 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; CLOCK_50                     ; -0.721 ; -17.343       ;
-; counter60:seconds|carry      ; 0.054  ; 0.000         ;
-; divide_by_50000000:clock|out ; 0.059  ; 0.000         ;
-; counter60:minutes|carry      ; 0.148  ; 0.000         ;
+; CLOCK_50                     ; -0.755 ; -17.838       ;
+; counter60:seconds|carry      ; 0.064  ; 0.000         ;
+; divide_by_50000000:clock|out ; 0.122  ; 0.000         ;
+; counter60:minutes|carry      ; 0.142  ; 0.000         ;
+; load                         ; 0.348  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
 -----------------------------------------------
 ; Fast 1100mV 85C Model Metastability Summary ;
 -----------------------------------------------
-No synchronizer chains to report.
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
 
 
 +-------------------------------------------------------+
@@ -330,10 +375,11 @@ No synchronizer chains to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; divide_by_50000000:clock|out ; -2.138 ; -12.640       ;
-; counter60:seconds|carry      ; -1.864 ; -11.758       ;
-; counter60:minutes|carry      ; -1.853 ; -8.334        ;
-; CLOCK_50                     ; -1.067 ; -32.946       ;
+; counter60:seconds|carry      ; -3.648 ; -24.346       ;
+; load                         ; -2.167 ; -10.404       ;
+; counter60:minutes|carry      ; -2.142 ; -10.649       ;
+; divide_by_50000000:clock|out ; -1.953 ; -20.925       ;
+; CLOCK_50                     ; -1.424 ; -40.024       ;
 +------------------------------+--------+---------------+
 
 
@@ -342,23 +388,34 @@ No synchronizer chains to report.
 +------------------------------+-------+---------------+
 ; Clock                        ; Slack ; End Point TNS ;
 +------------------------------+-------+---------------+
-; divide_by_50000000:clock|out ; 0.121 ; 0.000         ;
-; counter60:seconds|carry      ; 0.147 ; 0.000         ;
-; counter60:minutes|carry      ; 0.148 ; 0.000         ;
-; CLOCK_50                     ; 0.232 ; 0.000         ;
+; divide_by_50000000:clock|out ; 0.115 ; 0.000         ;
+; CLOCK_50                     ; 0.194 ; 0.000         ;
+; counter60:minutes|carry      ; 0.229 ; 0.000         ;
+; counter60:seconds|carry      ; 0.322 ; 0.000         ;
+; load                         ; 1.866 ; 0.000         ;
 +------------------------------+-------+---------------+
 
 
------------------------------------------
-; Fast 1100mV 0C Model Recovery Summary ;
------------------------------------------
-No paths to report.
++-------------------------------------------------------+
+; Fast 1100mV 0C Model Recovery Summary                 ;
++------------------------------+--------+---------------+
+; Clock                        ; Slack  ; End Point TNS ;
++------------------------------+--------+---------------+
+; divide_by_50000000:clock|out ; -0.788 ; -8.494        ;
+; counter60:seconds|carry      ; -0.728 ; -4.283        ;
+; counter60:minutes|carry      ; -0.668 ; -3.340        ;
++------------------------------+--------+---------------+
 
 
-----------------------------------------
-; Fast 1100mV 0C Model Removal Summary ;
-----------------------------------------
-No paths to report.
++------------------------------------------------------+
+; Fast 1100mV 0C Model Removal Summary                 ;
++------------------------------+-------+---------------+
+; Clock                        ; Slack ; End Point TNS ;
++------------------------------+-------+---------------+
+; counter60:seconds|carry      ; 0.252 ; 0.000         ;
+; counter60:minutes|carry      ; 0.284 ; 0.000         ;
+; divide_by_50000000:clock|out ; 0.328 ; 0.000         ;
++------------------------------+-------+---------------+
 
 
 +-------------------------------------------------------+
@@ -366,17 +423,19 @@ No paths to report.
 +------------------------------+--------+---------------+
 ; Clock                        ; Slack  ; End Point TNS ;
 +------------------------------+--------+---------------+
-; CLOCK_50                     ; -0.767 ; -20.680       ;
-; counter60:seconds|carry      ; 0.082  ; 0.000         ;
-; divide_by_50000000:clock|out ; 0.083  ; 0.000         ;
-; counter60:minutes|carry      ; 0.148  ; 0.000         ;
+; CLOCK_50                     ; -0.816 ; -21.257       ;
+; counter60:seconds|carry      ; 0.083  ; 0.000         ;
+; divide_by_50000000:clock|out ; 0.126  ; 0.000         ;
+; counter60:minutes|carry      ; 0.147  ; 0.000         ;
+; load                         ; 0.370  ; 0.000         ;
 +------------------------------+--------+---------------+
 
 
 ----------------------------------------------
 ; Fast 1100mV 0C Model Metastability Summary ;
 ----------------------------------------------
-No synchronizer chains to report.
+Design MTBF is not calculated because the design doesn't meet its timing requirements.
+
 
 
 +---------------------------------------------------------------------------------------------+
@@ -384,16 +443,18 @@ No synchronizer chains to report.
 +-------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                         ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +-------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack              ; -4.709   ; 0.121 ; N/A      ; N/A     ; -0.767              ;
-;  CLOCK_50                     ; -2.601   ; 0.232 ; N/A      ; N/A     ; -0.767              ;
-;  counter60:minutes|carry      ; -4.307   ; 0.148 ; N/A      ; N/A     ; -0.394              ;
-;  counter60:seconds|carry      ; -4.159   ; 0.147 ; N/A      ; N/A     ; -0.394              ;
-;  divide_by_50000000:clock|out ; -4.709   ; 0.121 ; N/A      ; N/A     ; -0.394              ;
-; Design-wide TNS               ; -160.883 ; 0.0   ; 0.0      ; 0.0     ; -34.778             ;
-;  CLOCK_50                     ; -87.417  ; 0.000 ; N/A      ; N/A     ; -24.742             ;
-;  counter60:minutes|carry      ; -19.980  ; 0.000 ; N/A      ; N/A     ; -2.564              ;
-;  counter60:seconds|carry      ; -26.079  ; 0.000 ; N/A      ; N/A     ; -3.766              ;
-;  divide_by_50000000:clock|out ; -28.296  ; 0.000 ; N/A      ; N/A     ; -3.721              ;
+; Worst-case Slack              ; -7.719   ; 0.115 ; -1.415   ; 0.252   ; -0.816              ;
+;  CLOCK_50                     ; -3.118   ; 0.194 ; N/A      ; N/A     ; -0.816              ;
+;  counter60:minutes|carry      ; -4.719   ; 0.229 ; -1.184   ; 0.284   ; -0.394              ;
+;  counter60:seconds|carry      ; -7.719   ; 0.322 ; -1.329   ; 0.252   ; -0.394              ;
+;  divide_by_50000000:clock|out ; -4.482   ; 0.115 ; -1.415   ; 0.328   ; -0.394              ;
+;  load                         ; -4.773   ; 1.866 ; N/A      ; N/A     ; 0.305               ;
+; Design-wide TNS               ; -242.674 ; 0.0   ; -28.971  ; 0.0     ; -38.034             ;
+;  CLOCK_50                     ; -98.746  ; 0.000 ; N/A      ; N/A     ; -25.427             ;
+;  counter60:minutes|carry      ; -22.955  ; 0.000 ; -5.904   ; 0.000   ; -2.610              ;
+;  counter60:seconds|carry      ; -52.108  ; 0.000 ; -7.815   ; 0.000   ; -3.763              ;
+;  divide_by_50000000:clock|out ; -49.259  ; 0.000 ; -15.261  ; 0.000   ; -6.234              ;
+;  load                         ; -23.141  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 +-------------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -454,19 +515,19 @@ No synchronizer chains to report.
 +----------+--------------+-----------------+-----------------+
 ; KEY[1]   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; KEY[2]   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; KEY[0]   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; KEY[3]   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; CLOCK_50 ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[4]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[0]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[3]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[1]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[2]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[9]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[8]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[5]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[6]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[7]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[8]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; CLOCK_50 ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[4]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[3]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[9]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[0]   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; KEY[3]   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 +----------+--------------+-----------------+-----------------+
 
 
@@ -675,10 +736,15 @@ No synchronizer chains to report.
 +------------------------------+------------------------------+----------+----------+----------+----------+
 ; From Clock                   ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------+------------------------------+----------+----------+----------+----------+
-; CLOCK_50                     ; CLOCK_50                     ; 1220     ; 0        ; 0        ; 0        ;
-; counter60:minutes|carry      ; counter60:minutes|carry      ; 1252     ; 0        ; 0        ; 0        ;
-; counter60:seconds|carry      ; counter60:seconds|carry      ; 2354     ; 0        ; 0        ; 0        ;
-; divide_by_50000000:clock|out ; divide_by_50000000:clock|out ; 2354     ; 0        ; 0        ; 0        ;
+; CLOCK_50                     ; CLOCK_50                     ; 1114     ; 0        ; 0        ; 0        ;
+; counter60:minutes|carry      ; counter60:minutes|carry      ; 1265     ; 0        ; 0        ; 0        ;
+; load                         ; counter60:minutes|carry      ; 1265     ; 2538     ; 0        ; 0        ;
+; CLOCK_50                     ; counter60:seconds|carry      ; 1803     ; 0        ; 0        ; 0        ;
+; counter60:seconds|carry      ; counter60:seconds|carry      ; 2386     ; 0        ; 0        ; 0        ;
+; load                         ; counter60:seconds|carry      ; 2387     ; 4779     ; 0        ; 0        ;
+; divide_by_50000000:clock|out ; divide_by_50000000:clock|out ; 4374     ; 0        ; 0        ; 0        ;
+; load                         ; divide_by_50000000:clock|out ; 1        ; 1        ; 0        ; 0        ;
+; CLOCK_50                     ; load                         ; 0        ; 0        ; 5        ; 0        ;
 +------------------------------+------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -688,11 +754,40 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------------------------+------------------------------+----------+----------+----------+----------+
 ; From Clock                   ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------------------------+------------------------------+----------+----------+----------+----------+
-; CLOCK_50                     ; CLOCK_50                     ; 1220     ; 0        ; 0        ; 0        ;
-; counter60:minutes|carry      ; counter60:minutes|carry      ; 1252     ; 0        ; 0        ; 0        ;
-; counter60:seconds|carry      ; counter60:seconds|carry      ; 2354     ; 0        ; 0        ; 0        ;
-; divide_by_50000000:clock|out ; divide_by_50000000:clock|out ; 2354     ; 0        ; 0        ; 0        ;
+; CLOCK_50                     ; CLOCK_50                     ; 1114     ; 0        ; 0        ; 0        ;
+; counter60:minutes|carry      ; counter60:minutes|carry      ; 1265     ; 0        ; 0        ; 0        ;
+; load                         ; counter60:minutes|carry      ; 1265     ; 2538     ; 0        ; 0        ;
+; CLOCK_50                     ; counter60:seconds|carry      ; 1803     ; 0        ; 0        ; 0        ;
+; counter60:seconds|carry      ; counter60:seconds|carry      ; 2386     ; 0        ; 0        ; 0        ;
+; load                         ; counter60:seconds|carry      ; 2387     ; 4779     ; 0        ; 0        ;
+; divide_by_50000000:clock|out ; divide_by_50000000:clock|out ; 4374     ; 0        ; 0        ; 0        ;
+; load                         ; divide_by_50000000:clock|out ; 1        ; 1        ; 0        ; 0        ;
+; CLOCK_50                     ; load                         ; 0        ; 0        ; 5        ; 0        ;
 +------------------------------+------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                    ;
++------------+------------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------------------------+----------+----------+----------+----------+
+; load       ; counter60:minutes|carry      ; 5        ; 5        ; 0        ; 0        ;
+; load       ; counter60:seconds|carry      ; 6        ; 6        ; 0        ; 0        ;
+; load       ; divide_by_50000000:clock|out ; 11       ; 11       ; 0        ; 0        ;
++------------+------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------+
+; Removal Transfers                                                                     ;
++------------+------------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------------------------+----------+----------+----------+----------+
+; load       ; counter60:minutes|carry      ; 5        ; 5        ; 0        ; 0        ;
+; load       ; counter60:seconds|carry      ; 6        ; 6        ; 0        ; 0        ;
+; load       ; divide_by_50000000:clock|out ; 11       ; 11       ; 0        ; 0        ;
++------------+------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -716,9 +811,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 12    ; 12   ;
-; Unconstrained Input Port Paths  ; 30    ; 30   ;
+; Unconstrained Input Port Paths  ; 237   ; 237  ;
 ; Unconstrained Output Ports      ; 41    ; 41   ;
-; Unconstrained Output Port Paths ; 231   ; 231  ;
+; Unconstrained Output Port Paths ; 566   ; 566  ;
 +---------------------------------+-------+------+
 
 
@@ -731,6 +826,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; counter60:minutes|carry      ; counter60:minutes|carry      ; Base ; Constrained ;
 ; counter60:seconds|carry      ; counter60:seconds|carry      ; Base ; Constrained ;
 ; divide_by_50000000:clock|out ; divide_by_50000000:clock|out ; Base ; Constrained ;
+; load                         ; load                         ; Base ; Constrained ;
 +------------------------------+------------------------------+------+-------------+
 
 
@@ -878,19 +974,21 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Sep 19 14:52:48 2022
+    Info: Processing started: Tue Sep 20 21:19:25 2022
 Info: Command: quartus_sta digi_lock -c digi_lock
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Warning (335093): The Timing Analyzer is analyzing 11 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'digi_lock.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name divide_by_50000000:clock|out divide_by_50000000:clock|out
     Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
     Info (332105): create_clock -period 1.000 -name counter60:seconds|carry counter60:seconds|carry
+    Info (332105): create_clock -period 1.000 -name load load
     Info (332105): create_clock -period 1.000 -name counter60:minutes|carry counter60:minutes|carry
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
@@ -898,119 +996,179 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.689
+Info (332146): Worst-case setup slack is -7.556
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.689             -28.071 divide_by_50000000:clock|out 
-    Info (332119):    -4.212             -19.402 counter60:minutes|carry 
-    Info (332119):    -4.152             -25.993 counter60:seconds|carry 
-    Info (332119):    -2.495             -87.417 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.365
+    Info (332119):    -7.556             -50.995 counter60:seconds|carry 
+    Info (332119):    -4.751             -22.944 load 
+    Info (332119):    -4.527             -22.102 counter60:minutes|carry 
+    Info (332119):    -4.374             -47.577 divide_by_50000000:clock|out 
+    Info (332119):    -2.942             -98.746 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.341
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.365               0.000 divide_by_50000000:clock|out 
-    Info (332119):     0.442               0.000 counter60:seconds|carry 
-    Info (332119):     0.445               0.000 counter60:minutes|carry 
-    Info (332119):     0.451               0.000 CLOCK_50 
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.613
+    Info (332119):     0.341               0.000 divide_by_50000000:clock|out 
+    Info (332119):     0.387               0.000 CLOCK_50 
+    Info (332119):     0.502               0.000 counter60:minutes|carry 
+    Info (332119):     0.786               0.000 counter60:seconds|carry 
+    Info (332119):     3.376               0.000 load 
+Info (332146): Worst-case recovery slack is -1.408
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.613             -24.742 CLOCK_50 
-    Info (332119):    -0.394              -3.766 counter60:seconds|carry 
-    Info (332119):    -0.394              -3.721 divide_by_50000000:clock|out 
-    Info (332119):    -0.394              -2.549 counter60:minutes|carry 
+    Info (332119):    -1.408             -15.245 divide_by_50000000:clock|out 
+    Info (332119):    -1.329              -7.815 counter60:seconds|carry 
+    Info (332119):    -1.168              -5.832 counter60:minutes|carry 
+Info (332146): Worst-case removal slack is 0.695
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.695               0.000 counter60:seconds|carry 
+    Info (332119):     0.790               0.000 counter60:minutes|carry 
+    Info (332119):     0.803               0.000 divide_by_50000000:clock|out 
+Info (332146): Worst-case minimum pulse width slack is -0.600
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.600             -25.427 CLOCK_50 
+    Info (332119):    -0.394              -6.234 divide_by_50000000:clock|out 
+    Info (332119):    -0.394              -3.763 counter60:seconds|carry 
+    Info (332119):    -0.394              -2.610 counter60:minutes|carry 
+    Info (332119):     0.313               0.000 load 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.709
+Info (332146): Worst-case setup slack is -7.719
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.709             -28.296 divide_by_50000000:clock|out 
-    Info (332119):    -4.307             -19.980 counter60:minutes|carry 
-    Info (332119):    -4.159             -26.079 counter60:seconds|carry 
-    Info (332119):    -2.601             -84.701 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.342
+    Info (332119):    -7.719             -52.108 counter60:seconds|carry 
+    Info (332119):    -4.773             -23.141 load 
+    Info (332119):    -4.719             -22.955 counter60:minutes|carry 
+    Info (332119):    -4.482             -49.259 divide_by_50000000:clock|out 
+    Info (332119):    -3.118             -95.211 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.315
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.342               0.000 divide_by_50000000:clock|out 
-    Info (332119):     0.452               0.000 CLOCK_50 
-    Info (332119):     0.453               0.000 counter60:seconds|carry 
-    Info (332119):     0.455               0.000 counter60:minutes|carry 
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.647
+    Info (332119):     0.315               0.000 divide_by_50000000:clock|out 
+    Info (332119):     0.388               0.000 CLOCK_50 
+    Info (332119):     0.572               0.000 counter60:minutes|carry 
+    Info (332119):     0.803               0.000 counter60:seconds|carry 
+    Info (332119):     3.448               0.000 load 
+Info (332146): Worst-case recovery slack is -1.415
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.647             -22.678 CLOCK_50 
-    Info (332119):    -0.394              -3.710 counter60:seconds|carry 
-    Info (332119):    -0.394              -3.673 divide_by_50000000:clock|out 
-    Info (332119):    -0.394              -2.564 counter60:minutes|carry 
+    Info (332119):    -1.415             -15.261 divide_by_50000000:clock|out 
+    Info (332119):    -1.325              -7.806 counter60:seconds|carry 
+    Info (332119):    -1.184              -5.904 counter60:minutes|carry 
+Info (332146): Worst-case removal slack is 0.650
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.650               0.000 counter60:seconds|carry 
+    Info (332119):     0.719               0.000 counter60:minutes|carry 
+    Info (332119):     0.751               0.000 divide_by_50000000:clock|out 
+Info (332146): Worst-case minimum pulse width slack is -0.667
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.667             -23.183 CLOCK_50 
+    Info (332119):    -0.394              -6.191 divide_by_50000000:clock|out 
+    Info (332119):    -0.394              -3.716 counter60:seconds|carry 
+    Info (332119):    -0.394              -2.566 counter60:minutes|carry 
+    Info (332119):     0.305               0.000 load 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.335
+Info (332146): Worst-case setup slack is -3.899
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.335             -13.861 divide_by_50000000:clock|out 
-    Info (332119):    -2.055             -13.067 counter60:seconds|carry 
-    Info (332119):    -1.985              -8.942 counter60:minutes|carry 
-    Info (332119):    -1.130             -38.382 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.148
+    Info (332119):    -3.899             -25.986 counter60:seconds|carry 
+    Info (332119):    -2.282             -10.892 load 
+    Info (332119):    -2.263             -11.259 counter60:minutes|carry 
+    Info (332119):    -2.092             -22.669 divide_by_50000000:clock|out 
+    Info (332119):    -1.503             -46.543 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.141
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.148               0.000 divide_by_50000000:clock|out 
-    Info (332119):     0.162               0.000 counter60:minutes|carry 
-    Info (332119):     0.162               0.000 counter60:seconds|carry 
-    Info (332119):     0.245               0.000 CLOCK_50 
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.721
+    Info (332119):     0.141               0.000 divide_by_50000000:clock|out 
+    Info (332119):     0.205               0.000 CLOCK_50 
+    Info (332119):     0.247               0.000 counter60:minutes|carry 
+    Info (332119):     0.360               0.000 counter60:seconds|carry 
+    Info (332119):     1.902               0.000 load 
+Info (332146): Worst-case recovery slack is -0.904
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.721             -17.343 CLOCK_50 
-    Info (332119):     0.054               0.000 counter60:seconds|carry 
-    Info (332119):     0.059               0.000 divide_by_50000000:clock|out 
-    Info (332119):     0.148               0.000 counter60:minutes|carry 
+    Info (332119):    -0.904              -9.777 divide_by_50000000:clock|out 
+    Info (332119):    -0.841              -4.947 counter60:seconds|carry 
+    Info (332119):    -0.768              -3.836 counter60:minutes|carry 
+Info (332146): Worst-case removal slack is 0.323
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.323               0.000 counter60:seconds|carry 
+    Info (332119):     0.378               0.000 counter60:minutes|carry 
+    Info (332119):     0.401               0.000 divide_by_50000000:clock|out 
+Info (332146): Worst-case minimum pulse width slack is -0.755
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.755             -17.838 CLOCK_50 
+    Info (332119):     0.064               0.000 counter60:seconds|carry 
+    Info (332119):     0.122               0.000 divide_by_50000000:clock|out 
+    Info (332119):     0.142               0.000 counter60:minutes|carry 
+    Info (332119):     0.348               0.000 load 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.138
+Info (332146): Worst-case setup slack is -3.648
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.138             -12.640 divide_by_50000000:clock|out 
-    Info (332119):    -1.864             -11.758 counter60:seconds|carry 
-    Info (332119):    -1.853              -8.334 counter60:minutes|carry 
-    Info (332119):    -1.067             -32.946 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.121
+    Info (332119):    -3.648             -24.346 counter60:seconds|carry 
+    Info (332119):    -2.167             -10.404 load 
+    Info (332119):    -2.142             -10.649 counter60:minutes|carry 
+    Info (332119):    -1.953             -20.925 divide_by_50000000:clock|out 
+    Info (332119):    -1.424             -40.024 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.115
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.121               0.000 divide_by_50000000:clock|out 
-    Info (332119):     0.147               0.000 counter60:seconds|carry 
-    Info (332119):     0.148               0.000 counter60:minutes|carry 
-    Info (332119):     0.232               0.000 CLOCK_50 
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.767
+    Info (332119):     0.115               0.000 divide_by_50000000:clock|out 
+    Info (332119):     0.194               0.000 CLOCK_50 
+    Info (332119):     0.229               0.000 counter60:minutes|carry 
+    Info (332119):     0.322               0.000 counter60:seconds|carry 
+    Info (332119):     1.866               0.000 load 
+Info (332146): Worst-case recovery slack is -0.788
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.767             -20.680 CLOCK_50 
-    Info (332119):     0.082               0.000 counter60:seconds|carry 
-    Info (332119):     0.083               0.000 divide_by_50000000:clock|out 
-    Info (332119):     0.148               0.000 counter60:minutes|carry 
+    Info (332119):    -0.788              -8.494 divide_by_50000000:clock|out 
+    Info (332119):    -0.728              -4.283 counter60:seconds|carry 
+    Info (332119):    -0.668              -3.340 counter60:minutes|carry 
+Info (332146): Worst-case removal slack is 0.252
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.252               0.000 counter60:seconds|carry 
+    Info (332119):     0.284               0.000 counter60:minutes|carry 
+    Info (332119):     0.328               0.000 divide_by_50000000:clock|out 
+Info (332146): Worst-case minimum pulse width slack is -0.816
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.816             -21.257 CLOCK_50 
+    Info (332119):     0.083               0.000 counter60:seconds|carry 
+    Info (332119):     0.126               0.000 divide_by_50000000:clock|out 
+    Info (332119):     0.147               0.000 counter60:minutes|carry 
+    Info (332119):     0.370               0.000 load 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): Design MTBF is not calculated because the design doesn't meet its timing requirements.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5242 megabytes
-    Info: Processing ended: Mon Sep 19 14:52:56 2022
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 5241 megabytes
+    Info: Processing ended: Tue Sep 20 21:19:33 2022
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:09
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for digi_lock
-Mon Sep 19 14:51:43 2022
+Tue Sep 20 21:18:22 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,20 +14,19 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
- 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
- 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
- 16. Parameter Settings for Inferred Entity Instance: counter60:seconds|lpm_divide:Mod0
- 17. Parameter Settings for Inferred Entity Instance: counter60:minutes|lpm_divide:Mod0
- 18. Parameter Settings for Inferred Entity Instance: counter24:hours|lpm_divide:Mod0
- 19. Port Connectivity Checks: "counter60:seconds"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+  9. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 10. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 15. Parameter Settings for Inferred Entity Instance: counter60:seconds|lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: counter60:minutes|lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: counter24:hours|lpm_divide:Mod0
+ 18. Port Connectivity Checks: "counter60:seconds"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -54,13 +53,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Sep 19 14:51:43 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Sep 20 21:18:22 2022       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; digi_lock                                   ;
 ; Top-level Entity Name           ; digi_clock                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 46                                          ;
+; Total registers                 ; 50                                          ;
 ; Total pins                      ; 57                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -179,58 +178,58 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                          ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                      ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
-; digi_lock.v                      ; yes             ; User Verilog HDL File        ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v                ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf             ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc            ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc        ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc             ;         ;
-; db/lpm_divide_62m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_62m.tdf      ;         ;
-; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/sign_div_unsign_9kh.tdf ;         ;
-; db/alt_u_div_ose.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/alt_u_div_ose.tdf       ;         ;
-; db/lpm_divide_3am.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_3am.tdf      ;         ;
-; db/lpm_divide_52m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_52m.tdf      ;         ;
-; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/sign_div_unsign_8kh.tdf ;         ;
-; db/alt_u_div_mse.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/alt_u_div_mse.tdf       ;         ;
-; db/lpm_divide_2am.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_2am.tdf      ;         ;
-; db/lpm_divide_92m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_92m.tdf      ;         ;
-; db/sign_div_unsign_ckh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/sign_div_unsign_ckh.tdf ;         ;
-; db/alt_u_div_use.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/alt_u_div_use.tdf       ;         ;
-; db/lpm_divide_72m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_72m.tdf      ;         ;
-; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/sign_div_unsign_akh.tdf ;         ;
-; db/alt_u_div_qse.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/alt_u_div_qse.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; digi_lock.v                      ; yes             ; User Verilog HDL File        ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v                ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf              ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc             ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc         ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc              ;         ;
+; db/lpm_divide_62m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_62m.tdf      ;         ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/sign_div_unsign_9kh.tdf ;         ;
+; db/alt_u_div_ose.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/alt_u_div_ose.tdf       ;         ;
+; db/lpm_divide_3am.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_3am.tdf      ;         ;
+; db/lpm_divide_52m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_52m.tdf      ;         ;
+; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/sign_div_unsign_8kh.tdf ;         ;
+; db/alt_u_div_mse.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/alt_u_div_mse.tdf       ;         ;
+; db/lpm_divide_2am.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_2am.tdf      ;         ;
+; db/lpm_divide_92m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_92m.tdf      ;         ;
+; db/sign_div_unsign_ckh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/sign_div_unsign_ckh.tdf ;         ;
+; db/alt_u_div_use.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/alt_u_div_use.tdf       ;         ;
+; db/lpm_divide_72m.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_72m.tdf      ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/sign_div_unsign_akh.tdf ;         ;
+; db/alt_u_div_qse.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/alt_u_div_qse.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                        ;
-+---------------------------------------------+--------------------------------------+
-; Resource                                    ; Usage                                ;
-+---------------------------------------------+--------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 162                                  ;
-;                                             ;                                      ;
-; Combinational ALUT usage for logic          ; 306                                  ;
-;     -- 7 input functions                    ; 8                                    ;
-;     -- 6 input functions                    ; 9                                    ;
-;     -- 5 input functions                    ; 11                                   ;
-;     -- 4 input functions                    ; 57                                   ;
-;     -- <=3 input functions                  ; 221                                  ;
-;                                             ;                                      ;
-; Dedicated logic registers                   ; 46                                   ;
-;                                             ;                                      ;
-; I/O pins                                    ; 57                                   ;
-;                                             ;                                      ;
-; Total DSP Blocks                            ; 0                                    ;
-;                                             ;                                      ;
-; Maximum fan-out node                        ; divide_by_50000000:clock|LessThan0~2 ;
-; Maximum fan-out                             ; 27                                   ;
-; Total fan-out                               ; 1145                                 ;
-; Average fan-out                             ; 2.46                                 ;
-+---------------------------------------------+--------------------------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimate of Logic utilization (ALMs needed) ; 188   ;
+;                                             ;       ;
+; Combinational ALUT usage for logic          ; 354   ;
+;     -- 7 input functions                    ; 3     ;
+;     -- 6 input functions                    ; 18    ;
+;     -- 5 input functions                    ; 17    ;
+;     -- 4 input functions                    ; 72    ;
+;     -- <=3 input functions                  ; 244   ;
+;                                             ;       ;
+; Dedicated logic registers                   ; 50    ;
+;                                             ;       ;
+; I/O pins                                    ; 57    ;
+;                                             ;       ;
+; Total DSP Blocks                            ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; load  ;
+; Maximum fan-out                             ; 41    ;
+; Total fan-out                               ; 1314  ;
+; Average fan-out                             ; 2.54  ;
++---------------------------------------------+-------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -238,13 +237,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                           ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |digi_clock                               ; 306 (0)             ; 46 (0)                    ; 0                 ; 0          ; 57   ; 0            ; |digi_clock                                                                                                                   ; digi_clock          ; work         ;
-;    |counter24:hours|                      ; 26 (9)              ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |digi_clock|counter24:hours                                                                                                   ; counter24           ; work         ;
+; |digi_clock                               ; 354 (2)             ; 50 (4)                    ; 0                 ; 0          ; 57   ; 0            ; |digi_clock                                                                                                                   ; digi_clock          ; work         ;
+;    |counter24:hours|                      ; 46 (29)             ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |digi_clock|counter24:hours                                                                                                   ; counter24           ; work         ;
 ;       |lpm_divide:Mod0|                   ; 17 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |digi_clock|counter24:hours|lpm_divide:Mod0                                                                                   ; lpm_divide          ; work         ;
 ;          |lpm_divide_72m:auto_generated|  ; 17 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |digi_clock|counter24:hours|lpm_divide:Mod0|lpm_divide_72m:auto_generated                                                     ; lpm_divide_72m      ; work         ;
 ;             |sign_div_unsign_akh:divider| ; 17 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |digi_clock|counter24:hours|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider                         ; sign_div_unsign_akh ; work         ;
 ;                |alt_u_div_qse:divider|    ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |digi_clock|counter24:hours|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider   ; alt_u_div_qse       ; work         ;
-;    |counter60:minutes|                    ; 30 (11)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |digi_clock|counter60:minutes                                                                                                 ; counter60           ; work         ;
+;    |counter60:minutes|                    ; 56 (37)             ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |digi_clock|counter60:minutes                                                                                                 ; counter60           ; work         ;
 ;       |lpm_divide:Mod0|                   ; 19 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |digi_clock|counter60:minutes|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_92m:auto_generated|  ; 19 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |digi_clock|counter60:minutes|lpm_divide:Mod0|lpm_divide_92m:auto_generated                                                   ; lpm_divide_92m      ; work         ;
 ;             |sign_div_unsign_ckh:divider| ; 19 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |digi_clock|counter60:minutes|lpm_divide:Mod0|lpm_divide_92m:auto_generated|sign_div_unsign_ckh:divider                       ; sign_div_unsign_ckh ; work         ;
@@ -294,25 +293,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 46    ;
-; Number of registers using Synchronous Clear  ; 32    ;
-; Number of registers using Synchronous Load   ; 11    ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 50    ;
+; Number of registers using Synchronous Clear  ; 26    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 17    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 2     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |digi_clock|counter60:seconds|count[5] ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |digi_clock|counter60:minutes|count[5] ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |digi_clock|counter24:hours|count[4]   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
 +------------------------------------------------------------------+
@@ -536,35 +524,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 46                          ;
+; arriav_ff             ; 50                          ;
+;     CLR               ; 17                          ;
 ;     ENA               ; 2                           ;
-;     SCLR              ; 32                          ;
-;     SLD               ; 11                          ;
-;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 313                         ;
+;     SCLR              ; 26                          ;
+;     plain             ; 5                           ;
+; arriav_lcell_comb     ; 361                         ;
 ;     arith             ; 145                         ;
 ;         0 data inputs ; 32                          ;
 ;         1 data inputs ; 45                          ;
 ;         2 data inputs ; 15                          ;
-;         3 data inputs ; 28                          ;
-;         4 data inputs ; 25                          ;
-;     extend            ; 8                           ;
-;         7 data inputs ; 8                           ;
-;     normal            ; 130                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 42                          ;
 ;         3 data inputs ; 29                          ;
-;         4 data inputs ; 32                          ;
-;         5 data inputs ; 11                          ;
-;         6 data inputs ; 9                           ;
+;         4 data inputs ; 24                          ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 183                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 44                          ;
+;         3 data inputs ; 47                          ;
+;         4 data inputs ; 48                          ;
+;         5 data inputs ; 17                          ;
+;         6 data inputs ; 18                          ;
 ;     shared            ; 30                          ;
 ;         0 data inputs ; 6                           ;
 ;         1 data inputs ; 24                          ;
 ; boundary_port         ; 57                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.10                        ;
-; Average LUT depth     ; 5.36                        ;
+; Max LUT depth         ; 10.10                       ;
+; Average LUT depth     ; 6.49                        ;
 +-----------------------+-----------------------------+
 
 
@@ -583,122 +571,135 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Sep 19 14:51:27 2022
+    Info: Processing started: Tue Sep 20 21:18:06 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off digi_lock -c digi_lock
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 5 design units, including 5 entities, in source file digi_lock.v
-    Info (12023): Found entity 1: digi_clock File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 2
-    Info (12023): Found entity 2: counter60 File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 78
-    Info (12023): Found entity 3: counter24 File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 103
-    Info (12023): Found entity 4: decTo7 File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 127
-    Info (12023): Found entity 5: divide_by_50000000 File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 149
-Warning (10236): Verilog HDL Implicit Net warning at digi_lock.v(34): created implicit net for "load" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 34
+    Info (12023): Found entity 1: digi_clock File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 2
+    Info (12023): Found entity 2: counter60 File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 96
+    Info (12023): Found entity 3: counter24 File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 132
+    Info (12023): Found entity 4: decTo7 File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 166
+    Info (12023): Found entity 5: divide_by_50000000 File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 188
 Info (12127): Elaborating entity "digi_clock" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at digi_lock.v(60): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 60
-Warning (10230): Verilog HDL assignment warning at digi_lock.v(61): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 61
-Warning (10230): Verilog HDL assignment warning at digi_lock.v(62): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 62
-Warning (10230): Verilog HDL assignment warning at digi_lock.v(63): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 63
-Warning (10230): Verilog HDL assignment warning at digi_lock.v(64): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 64
-Warning (10230): Verilog HDL assignment warning at digi_lock.v(65): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 65
-Info (12128): Elaborating entity "divide_by_50000000" for hierarchy "divide_by_50000000:clock" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 44
-Warning (10230): Verilog HDL assignment warning at digi_lock.v(156): truncated value with size 32 to match size of target (26) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 156
-Info (12128): Elaborating entity "counter60" for hierarchy "counter60:seconds" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 47
-Warning (10230): Verilog HDL assignment warning at digi_lock.v(90): truncated value with size 32 to match size of target (6) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 90
-Warning (10230): Verilog HDL assignment warning at digi_lock.v(95): truncated value with size 32 to match size of target (6) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 95
-Info (12128): Elaborating entity "counter24" for hierarchy "counter24:hours" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 54
-Warning (10230): Verilog HDL assignment warning at digi_lock.v(115): truncated value with size 32 to match size of target (5) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 115
-Warning (10230): Verilog HDL assignment warning at digi_lock.v(119): truncated value with size 32 to match size of target (5) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 119
-Info (12128): Elaborating entity "decTo7" for hierarchy "decTo7:sec_hexa0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 69
+Warning (10230): Verilog HDL assignment warning at digi_lock.v(61): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 61
+Warning (10230): Verilog HDL assignment warning at digi_lock.v(62): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 62
+Warning (10230): Verilog HDL assignment warning at digi_lock.v(63): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 63
+Warning (10230): Verilog HDL assignment warning at digi_lock.v(64): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 64
+Warning (10230): Verilog HDL assignment warning at digi_lock.v(65): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 65
+Warning (10230): Verilog HDL assignment warning at digi_lock.v(66): truncated value with size 32 to match size of target (4) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 66
+Critical Warning (10237): Verilog HDL warning at digi_lock.v(80): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 80
+Critical Warning (10237): Verilog HDL warning at digi_lock.v(81): can't infer register for assignment in edge-triggered always construct because the clock isn't obvious. Generated combinational logic instead File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 81
+Info (12128): Elaborating entity "divide_by_50000000" for hierarchy "divide_by_50000000:clock" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 45
+Warning (10230): Verilog HDL assignment warning at digi_lock.v(195): truncated value with size 32 to match size of target (26) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 195
+Info (12128): Elaborating entity "counter60" for hierarchy "counter60:seconds" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 48
+Warning (10230): Verilog HDL assignment warning at digi_lock.v(119): truncated value with size 32 to match size of target (6) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 119
+Warning (10230): Verilog HDL assignment warning at digi_lock.v(124): truncated value with size 32 to match size of target (6) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 124
+Info (12128): Elaborating entity "counter24" for hierarchy "counter24:hours" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 55
+Warning (10230): Verilog HDL assignment warning at digi_lock.v(154): truncated value with size 32 to match size of target (5) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 154
+Warning (10230): Verilog HDL assignment warning at digi_lock.v(158): truncated value with size 32 to match size of target (5) File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 158
+Info (12128): Elaborating entity "decTo7" for hierarchy "decTo7:sec_hexa0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 87
 Info (278001): Inferred 9 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 60
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 61
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 62
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 63
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 64
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 65
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "counter60:seconds|Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 90
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "counter60:minutes|Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 90
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "counter24:hours|Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 115
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 60
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 60
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 61
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 62
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 63
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 64
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 65
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 66
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "counter60:seconds|Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 119
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "counter60:minutes|Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 119
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "counter24:hours|Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 154
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 61
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 61
     Info (12134): Parameter "LPM_WIDTHN" = "6"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_62m.tdf
-    Info (12023): Found entity 1: lpm_divide_62m File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_62m.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_62m File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_62m.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_9kh File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/sign_div_unsign_9kh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/sign_div_unsign_9kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ose.tdf
-    Info (12023): Found entity 1: alt_u_div_ose File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/alt_u_div_ose.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 61
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 61
+    Info (12023): Found entity 1: alt_u_div_ose File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/alt_u_div_ose.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 62
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 62
     Info (12134): Parameter "LPM_WIDTHN" = "6"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3am.tdf
-    Info (12023): Found entity 1: lpm_divide_3am File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_3am.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 64
-Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 64
+    Info (12023): Found entity 1: lpm_divide_3am File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_3am.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 65
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 65
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_52m.tdf
-    Info (12023): Found entity 1: lpm_divide_52m File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_52m.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_52m File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_52m.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_8kh File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/sign_div_unsign_8kh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_8kh File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/sign_div_unsign_8kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mse.tdf
-    Info (12023): Found entity 1: alt_u_div_mse File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/alt_u_div_mse.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 65
-Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 65
+    Info (12023): Found entity 1: alt_u_div_mse File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/alt_u_div_mse.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 66
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 66
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2am.tdf
-    Info (12023): Found entity 1: lpm_divide_2am File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_2am.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "counter60:seconds|lpm_divide:Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 90
-Info (12133): Instantiated megafunction "counter60:seconds|lpm_divide:Mod0" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 90
+    Info (12023): Found entity 1: lpm_divide_2am File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_2am.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "counter60:seconds|lpm_divide:Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 119
+Info (12133): Instantiated megafunction "counter60:seconds|lpm_divide:Mod0" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 119
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "6"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_92m.tdf
-    Info (12023): Found entity 1: lpm_divide_92m File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_92m.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_92m File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_92m.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ckh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_ckh File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/sign_div_unsign_ckh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_ckh File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/sign_div_unsign_ckh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_use.tdf
-    Info (12023): Found entity 1: alt_u_div_use File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/alt_u_div_use.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "counter24:hours|lpm_divide:Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 115
-Info (12133): Instantiated megafunction "counter24:hours|lpm_divide:Mod0" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 115
+    Info (12023): Found entity 1: alt_u_div_use File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/alt_u_div_use.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "counter24:hours|lpm_divide:Mod0" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 154
+Info (12133): Instantiated megafunction "counter24:hours|lpm_divide:Mod0" with the following parameter: File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 154
     Info (12134): Parameter "LPM_WIDTHN" = "6"
     Info (12134): Parameter "LPM_WIDTHD" = "5"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_72m.tdf
-    Info (12023): Found entity 1: lpm_divide_72m File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/lpm_divide_72m.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_72m File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/lpm_divide_72m.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_akh File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/sign_div_unsign_akh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_akh File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/sign_div_unsign_akh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qse.tdf
-    Info (12023): Found entity 1: alt_u_div_qse File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/db/alt_u_div_qse.tdf Line: 23
+    Info (12023): Found entity 1: alt_u_div_qse File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/db/alt_u_div_qse.tdf Line: 23
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "counter60:minutes|count[0]" is converted into an equivalent circuit using register "counter60:minutes|count[0]~_emulated" and latch "counter60:minutes|count[0]~1" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 117
+    Warning (13310): Register "counter60:minutes|count[1]" is converted into an equivalent circuit using register "counter60:minutes|count[1]~_emulated" and latch "counter60:minutes|count[1]~5" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 117
+    Warning (13310): Register "counter60:minutes|count[2]" is converted into an equivalent circuit using register "counter60:minutes|count[2]~_emulated" and latch "counter60:minutes|count[2]~9" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 117
+    Warning (13310): Register "counter60:minutes|count[3]" is converted into an equivalent circuit using register "counter60:minutes|count[3]~_emulated" and latch "counter60:minutes|count[3]~13" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 117
+    Warning (13310): Register "counter24:hours|count[0]" is converted into an equivalent circuit using register "counter24:hours|count[0]~_emulated" and latch "counter24:hours|count[0]~1" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 152
+    Warning (13310): Register "counter24:hours|count[1]" is converted into an equivalent circuit using register "counter24:hours|count[1]~_emulated" and latch "counter24:hours|count[1]~5" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 152
+    Warning (13310): Register "counter24:hours|count[2]" is converted into an equivalent circuit using register "counter24:hours|count[2]~_emulated" and latch "counter24:hours|count[2]~9" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 152
+    Warning (13310): Register "counter24:hours|count[3]" is converted into an equivalent circuit using register "counter24:hours|count[3]~_emulated" and latch "counter24:hours|count[3]~13" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 152
+    Warning (13310): Register "counter60:minutes|count[4]" is converted into an equivalent circuit using register "counter60:minutes|count[4]~_emulated" and latch "counter60:minutes|count[4]~17" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 117
+    Warning (13310): Register "counter60:minutes|count[5]" is converted into an equivalent circuit using register "counter60:minutes|count[5]~_emulated" and latch "counter60:minutes|count[5]~21" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 117
+    Warning (13310): Register "counter24:hours|count[4]" is converted into an equivalent circuit using register "counter24:hours|count[4]~_emulated" and latch "counter24:hours|count[4]~17" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 152
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 2
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 10
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 2
-    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/digi_lock.v Line: 2
-Info (21057): Implemented 366 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "KEY[1]" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 4
+    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/digi_lock.v Line: 4
+Info (21057): Implemented 416 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 309 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 4890 megabytes
-    Info: Processing ended: Mon Sep 19 14:51:43 2022
+    Info (21061): Implemented 359 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 4892 megabytes
+    Info: Processing ended: Tue Sep 20 21:18:22 2022
     Info: Elapsed time: 00:00:16
     Info: Total CPU time (on all processors): 00:00:34
 

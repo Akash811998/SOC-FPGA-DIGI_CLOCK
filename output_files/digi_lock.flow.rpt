@@ -1,5 +1,5 @@
 Flow report for digi_lock
-Mon Sep 19 14:52:59 2022
+Tue Sep 20 21:19:36 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Sep 19 14:52:59 2022       ;
+; Flow Status                     ; Successful - Tue Sep 20 21:19:36 2022       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; digi_lock                                   ;
 ; Top-level Entity Name           ; digi_clock                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 165 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 56                                          ;
+; Logic utilization (in ALMs)     ; 187 / 32,070 ( < 1 % )                      ;
+; Total registers                 ; 62                                          ;
 ; Total pins                      ; 57 / 457 ( 12 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/19/2022 14:51:28 ;
+; Start date & time ; 09/20/2022 21:18:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; digi_lock           ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 66504332228133.166361708821580         ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 66504332228133.166372668714136         ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -104,12 +104,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4890 MB             ; 00:00:34                           ;
-; Fitter               ; 00:00:51     ; 1.1                     ; 7342 MB             ; 00:03:02                           ;
-; Assembler            ; 00:00:10     ; 1.0                     ; 4844 MB             ; 00:00:09                           ;
-; Timing Analyzer      ; 00:00:08     ; 1.5                     ; 5242 MB             ; 00:00:09                           ;
+; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4892 MB             ; 00:00:34                           ;
+; Fitter               ; 00:00:52     ; 1.1                     ; 7345 MB             ; 00:02:57                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 4840 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:08     ; 1.5                     ; 5241 MB             ; 00:00:09                           ;
 ; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4729 MB             ; 00:00:02                           ;
-; Total                ; 00:01:27     ; --                      ; --                  ; 00:03:56                           ;
+; Total                ; 00:01:26     ; --                      ; --                  ; 00:03:49                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

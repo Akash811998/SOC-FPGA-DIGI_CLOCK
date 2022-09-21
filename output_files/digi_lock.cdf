@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("D:/akash/UTA courses/SOC/quartus examples/DIGITAL LOCK/output_files/") File("digi_lock.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("D:/akash/UTA courses/SOC/quartus examples/DIGITAL CLOCK/output_files/") File("digi_lock.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
