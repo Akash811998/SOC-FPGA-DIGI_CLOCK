@@ -9,7 +9,7 @@ module digi_clock(input CLOCK_50,
 						output [6:0] HEX4, 
 						output [6:0] HEX5);
 	
-	//define the enable input to the seconds counter
+	//define the enable input of 1Hz tick rate to the seconds counter
 	wire clk;
 	
 	//mention the count variables for seconds, minutes and hours
@@ -17,7 +17,7 @@ module digi_clock(input CLOCK_50,
 	wire [5:0] count_min;
 	wire [4:0] count_hour;
 	
-	//to store the 5 or 6 bit converted values into 4 bit values to send it to the decTo7 module
+	//to store the 5 or 6 bit count values converted  into 4 bit values to send it to the decTo7 module
 	reg [3:0] sec_hex0=4'd0;
 	reg [3:0] sec_hex1=4'd0;
 	reg [3:0] min_hex0=4'd0;
@@ -26,19 +26,18 @@ module digi_clock(input CLOCK_50,
 	reg [3:0] hour_hex1=4'd0;
 	
 	//mention the enable I/O's which has to be given as the output to the next modules
-	wire enable_sec;
+	wire enable_sec; 
 	wire enable_min;
 	//wire enable_hour;
 	
 	//this is the input which when inserted makes the value of all HEX displays to the value of the load input
 	reg load;
-	reg pre_load, pre_min, set_min;
+	reg pre_load, pre_min, set_min; //these variables are defined to get rid of key debounce issues
 	
 	//defining the load inputs for the hours and minutes
-	reg [4:0]load_input_hours=5'd0;    //={SW[9],SW[8],SW[7],SW[6],SW[5]};
+	reg [4:0]load_input_hours=5'd0;   
 	reg [5:0]load_input_minutes=6'd0;
-//	assign load_input_minutes[5:1]={SW[4],SW[3],SW[2],SW[1],SW[0]};
-//	assign load_input_minutes[0]=KEY[3];
+
 	
 	
 	//instantiate the clock
@@ -55,7 +54,7 @@ module digi_clock(input CLOCK_50,
 	counter24 hours(enable_min,load,load_input_hours, count_hour);
 	
 	
-	//convert the count values of 5 bit and 6 bit to 4 bits
+	//convert the count values of 5/6 bit to 4 bits
 	always @(count_sec or count_min or count_hour)
 	begin
 		sec_hex0  <= (count_sec % 10);
@@ -69,7 +68,7 @@ module digi_clock(input CLOCK_50,
 	//prevent the debounce of KEY0
 	always @ (posedge(CLOCK_50))
 	begin 
-		pre_load <= !KEY[0];
+		pre_load <= !KEY[0]; //keys are by default 1 and are connected to pull up resistors
 		load	   <= pre_load;
 		pre_min  <= !KEY[3];
 		set_min	   <= pre_min;			
@@ -77,8 +76,8 @@ module digi_clock(input CLOCK_50,
 	
 	always @ (posedge(CLOCK_50) or posedge(load))
 	begin 
-			load_input_minutes<={SW[4],SW[3],SW[2],SW[1],SW[0],set_min};
-			load_input_hours  <={SW[9],SW[8],SW[7],SW[6],SW[5]};
+			load_input_minutes <= {SW[4],SW[3],SW[2],SW[1],SW[0],set_min};
+			load_input_hours   <= {SW[9],SW[8],SW[7],SW[6],SW[5]};
 	end
 		
 	
@@ -183,14 +182,13 @@ module decTo7(input [3:0] in, output reg [6:0] out);
 	end	
 endmodule 
 
-
-//keeps the signal high for half second and low for another half second
+//produce a tick signal for every 1Hz
 module divide_by_50000000(input clk_1, output reg out);
 	reg [25:0] count;
 	
 	always @ (posedge(clk_1) )
 	begin
-	if (count < 50000000)
+	if (count < 50000000)  //50000000 as the SOC is running at 50MHz
 	begin
 		count <= count + 1;
 		out <= 1'b0;
